@@ -1,0 +1,39 @@
+<h1>Welcome to Book Store Application</h1>
+<hr>
+<div class="block">
+    <input type="search" [(ngModel)]="byTitle" placeholder="Search Here"/><br/>
+    <div class="item" *ngFor="let bk of books | filter : byTitle">
+        <table>
+            <tr>
+                <td>
+                    <img [src]="bk.image" width="100px" height="100px"/>
+                </td>
+                <td>
+                    <div>
+                        <h2>{{bk.title}}</h2>
+                        <p>Price: {{ bk.price | currency : 'INR'}}</p>
+                        <p>Author: {{bk.author}}</p>
+                        <p><a href="#" (click)= getBook(bk.bookId)>Edit</a></p>
+                    </div>
+                </td>
+            </tr>    
+        </table>
+    </div>
+</div>
+<div *ngIf="selectedBook"  class="block">
+    <h1>{{selectedBook.title | uppercase }}</h1>
+    <hr>
+    <div>
+        <p>
+            <input [(ngModel)]="selectedBook.title" placeholder="title"/>
+        </p>
+        
+        <p>
+            <input [(ngModel)]="selectedBook.author" placeholder="author"/>
+        </p>
+        <p>
+            <input [(ngModel)]="selectedBook.price" placeholder="price"/>
+        </p>
+        <button (click) ="onSave()" >Save Changes</button>
+    </div>
+</div>

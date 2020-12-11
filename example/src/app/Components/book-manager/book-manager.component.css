@@ -1,0 +1,11 @@
+div.item{
+    width: 90%;
+    height: auto;
+    border: 2px solid darkred;
+}
+
+div.block{
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+}

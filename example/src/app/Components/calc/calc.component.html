@@ -1,0 +1,15 @@
+<h2>{{title}}</h2>
+<hr>
+<p>
+    <input [(ngModel)]="firstValue" type="number" placeholder="Enter First Value"/>
+    <select [(ngModel)]="operand">
+        <option>Add</option>
+        <option>Subtract</option>
+        <option>Multiply</option>
+        <option>Divide</option>
+    </select>
+    <input [(ngModel)] ="secondValue" type="number" placeholder="Enter Second Value">
+    <button (click)="process()">=</button>
+    <span>{{resultValue}}</span>
+</p>
+
